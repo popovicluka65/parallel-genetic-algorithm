@@ -69,10 +69,30 @@ void loadDataClassDuration(vector<string>& classes, vector<int>& duration) {
 }
 
 void printSchedule(vector<vector<string>>& bestInduvidual, vector<vector<int>>& bestStartsClassvector, vector<string> classroom, vector<string> classes) {
-    for (int i = 0; i < classes.size(); i++) {
-        for (int j = 0; j < bestInduvidual[i].size(); j++) {
-            cout << bestInduvidual[i][j] << endl;
+    int i = 0;
+    std::random_device rd;
+    std::mt19937 generator(rd());
+    std::uniform_int_distribution<int> distribution(420, 840);
+    while (i < classroom.size() * workingDays.size()) {
+        cout << workingDays[i / classroom.size()] << endl;
+        cout << classroom[i % classroom.size()] << endl;
+        int j = 0;
+        int sum = distribution(generator);
+        cout << "Classes starts at " << sum / 60 << "h and " << sum % 60 << " minutes" << endl;
+        if (i == 0 && j == 0) {
+            cout << bestInduvidual[0][0] << endl;
+            sum = sum + bestStartsClassvector[0][0];
         }
+        while (j < classes.size() / (classroom.size() * workingDays.size())) {
+            cout << bestInduvidual[(i + 1) * (j + 1)][0] << endl;
+            sum = sum + bestStartsClassvector[(i + 1) * (j + 1)][0];
+            j++;
+        }
+        if (sum > classroom.size() * workingDays.size() * 1140) {
+            break;
+        }
+        sum = 0;
+        i++;
     }
 }
 
@@ -86,9 +106,9 @@ int main()
     vector<vector<int>> bestStartsClass;
     loadDataClassroom(classroom);
     loadDataClassDuration(classes, duration);
-    GeneticAlgorithm geneticAlgorithm(classroom, workingDays.size(), classes, duration);
+    GeneticAlgorithm geneticAlgorithm(classroom, workingDays.size(), classes, duration, 1000, 5, 0.2, 4, 32);
     geneticAlgorithm.optimization(bestInduvidual, bestStartsClass);
-    //printSchedule(bestInduvidual, bestStartsClass, classroom, classes);
+    printSchedule(bestInduvidual, bestStartsClass, classroom, classes);
     tick_count endTime = tick_count::now();
     cout << "Parallel time: \t\t\t" << (endTime - startTime).seconds() << " seconds\n";
     string aaa;

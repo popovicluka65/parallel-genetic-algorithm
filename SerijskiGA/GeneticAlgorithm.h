@@ -19,10 +19,10 @@ class GeneticAlgorithm
 public:
 	GeneticAlgorithm(vector<string>& classroom, int numberWorkingDays, vector<string>& classes, vector<int>& duration);
 	void optimization(vector<vector<string>>& bestInduvidual, vector<vector<int>>& bestStartsClass);
-	void createPopulation(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startsClassAll);
-	void rate1(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startClassAll, vector<int>& rates);
-	void rate2(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startClassAll, vector<int>& rates);
-	void rulleteSelection(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startClassAll, vector<int>& rates, std::vector<std::vector<std::vector<std::string>>>& selection);
+	void createPopulation(vector<vector<vector<string>>>& population, vector<vector<vector<int>>>& startsClassAll);
+	void rate1(vector<vector<vector<string>>>& population, vector<vector<vector<int>>>& startClassAll, vector<int>& rates);
+	void rate2(vector<vector<vector<string>>>& population, vector<vector<vector<int>>>& startClassAll, vector<int>& rates);
+	void rulleteSelection(vector<vector<vector<string>>>& population,vector<vector<vector<int>>>& startClassAll, vector<int>& rates, vector<vector<vector<string>>>& selection);
 	void mutation(vector<vector<vector<string>>>& population);
 	int minimumNumber(int a, int b, int c);
 };

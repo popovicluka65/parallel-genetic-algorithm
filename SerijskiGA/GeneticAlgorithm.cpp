@@ -20,9 +20,9 @@ GeneticAlgorithm::GeneticAlgorithm(vector<string>& classroom, int numberWorkingD
 }
 void GeneticAlgorithm::optimization(vector<vector<string>>& bestInduvidual, vector<vector<int>>& bestStartsClass) {
 	int bestRate = -1000;
-	std::vector<std::vector<std::vector<std::string>>> population;
-	std::vector<std::vector<std::vector<std::string>>> selection;
-	std::vector<std::vector<std::vector<int>>> startsClassAll;
+	vector<vector<vector<string>>> population;
+	vector<vector<vector<string>>> selection;
+	vector<vector<vector<int>>> startsClassAll;
 	vector<int> rates;
 	createPopulation(population, startsClassAll);
 	rate1(population, startsClassAll, rates);
@@ -51,7 +51,7 @@ void GeneticAlgorithm::optimization(vector<vector<string>>& bestInduvidual, vect
 	}
 }
 
-void GeneticAlgorithm::createPopulation(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startsClassAll) {
+void GeneticAlgorithm::createPopulation(vector<vector<vector<string>>>& population,vector<vector<vector<int>>>& startsClassAll) {
 	for (int i = 0; i < numberWorkingDays * classroom.size(); i++) {
 		vector < vector<string>> vec;
 		vector < vector<int>> vec1;
@@ -62,9 +62,9 @@ void GeneticAlgorithm::createPopulation(std::vector<std::vector<std::vector<std:
 		int i = 0;
 		while (i < classes.size()) {
 			i++;
-			std::random_device rd;
-			std::mt19937 generator(rd());
-			std::uniform_int_distribution<int> distribution(0, 24);
+			random_device rd;
+			mt19937 generator(rd());
+			uniform_int_distribution<int> distribution(0, 24);
 			int randomBroj = distribution(generator);
 			if (population[randomBroj].size() >= 0) {
 				vector <string> vec;
@@ -77,7 +77,7 @@ void GeneticAlgorithm::createPopulation(std::vector<std::vector<std::vector<std:
 		}
 	}
 }
-void GeneticAlgorithm::rate1(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startClassAll, vector<int>& rates) {
+void GeneticAlgorithm::rate1(vector<vector<vector<string>>>& population, vector<vector<vector<int>>>& startClassAll, vector<int>& rates) {
 	for (int i = 0; i < population.size() - 1; i++) {
 		int sum = 0;
 		vector<vector<string>> table = population[i];
@@ -106,7 +106,7 @@ void GeneticAlgorithm::rate1(std::vector<std::vector<std::vector<std::string>>>&
 	}
 }
 
-void GeneticAlgorithm::rate2(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startClassAll, vector<int>& rates) {
+void GeneticAlgorithm::rate2(vector<vector<vector<string>>>& population,vector<vector<vector<int>>>& startClassAll, vector<int>& rates) {
 	int min1 = minimumNumber(population.size(), rates.size(), startClassAll.size());
 	for (int i = 0; i < min1 - 1; i++) {
 		int sum = 0;
@@ -154,12 +154,12 @@ void GeneticAlgorithm::mutation(vector<vector<vector<string>>>& population) {
 		vector<vector<string>> gen = population[i];
 		if (gen.size() != 0) {
 			for (int j = 0; j < gen.size(); j++) {
-				std::random_device rd;
-				std::mt19937 gen(rd());
-				std::uniform_real_distribution<double> dis(0.0, 1.0);
+				random_device rd;
+				mt19937 gen(rd());
+				uniform_real_distribution<double> dis(0.0, 1.0);
 				double randomNum = dis(gen);
 				if (randomNum < mutationRate) {
-					std::uniform_int_distribution<int> dis(0, population.size() - 1);
+					uniform_int_distribution<int> dis(0, population.size() - 1);
 					int randomNum1 = dis(gen);
 					int randomNum2 = dis(gen);
 					population[i][randomNum1], population[i][randomNum2] = population[i][randomNum2], population[i][randomNum1];
@@ -169,15 +169,15 @@ void GeneticAlgorithm::mutation(vector<vector<vector<string>>>& population) {
 	}
 }
 
-void GeneticAlgorithm::rulleteSelection(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startClassAll, vector<int>& rates, std::vector<std::vector<std::vector<std::string>>>& selection) {
+void GeneticAlgorithm::rulleteSelection(vector<vector<vector<string>>>& population, vector<vector<vector<int>>>& startClassAll, vector<int>& rates,vector<vector<vector<string>>>& selection) {
 	for (int i = 0; i < population.size(); i = i + 2) {
 		vector<int> adapty;
 		for (int j = 0; j < rates.size(); j++) {
-			std::random_device rd;
-			std::mt19937 generator(rd());
+			random_device rd;
+			mt19937 generator(rd());
 			double minBroj = 0.0;
 			double maxBroj = 1.0;
-			std::uniform_real_distribution<double> distribution(minBroj, maxBroj);
+			uniform_real_distribution<double> distribution(minBroj, maxBroj);
 			double slucajanBroj = distribution(generator);
 			int broj = slucajanBroj * rates[j];
 			adapty.push_back(broj);

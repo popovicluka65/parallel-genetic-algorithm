@@ -24,48 +24,47 @@ vector<string> splitString(const string& str, const string& delimiter) {
 }
 
 void loadDataClassroom(vector<string>& classroom) {
-    std::ifstream file("data_timetable.txt");
+    ifstream file("data_timetable.txt");
     if (file.is_open()) {
-        std::vector<std::string> contents;
-        std::string line;
-        while (std::getline(file, line)) {
+        vector<string> contents;
+        string line;
+        while (getline(file, line)) {
             contents.push_back(line);
         }
         file.close();
 
-        std::vector<std::string> class1;
-        std::vector<std::string> class2;
+        vector<string> class1;
+        vector<string> class2;
 
         class1 = splitString(contents[0], "rooms: ");
         class2 = splitString(class1[1], "\n");
         classroom = splitString(class2[0], ", ");
     }
     else {
-        std::cout << "Nije moguæe otvoriti datoteku." << std::endl;
+        cout << "Nije moguæe otvoriti datoteku." <<endl;
     }
 }
 void loadDataClassDuration(vector<string>& classes, vector<int>& duration) {
-    std::ifstream file("data_timetable.txt");
+    ifstream file("data_timetable.txt");
     string subject;
     string time;
     if (file.is_open()) {
-        std::string line;
+        string line;
         int lineCount = 0;
-        while (std::getline(file, line)) {
+        while (getline(file, line)) {
             if (lineCount >= 2) {
                 istringstream iss(line);
                 getline(iss, subject, ',');
                 iss >> time;
                 classes.push_back(subject);
-                duration.push_back(std::stoi(time));
+                duration.push_back(stoi(time));
             }
             lineCount++;
         }
         file.close();
     }
-    else {
-        std::cout << "Nije moguæe otvoriti datoteku." << std::endl;
-    }
+    else 
+        cout << "Nije moguæe otvoriti datoteku." << endl;
 }
 
 void printSchedule(vector<vector<string>>& bestInduvidual, vector<vector<int>>& bestStartsClassvector, vector<string> classroom, vector<string> classes) {

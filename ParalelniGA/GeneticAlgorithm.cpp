@@ -13,18 +13,17 @@
 
 using namespace std;
 using namespace tbb;
-GeneticAlgorithm::GeneticAlgorithm(vector<string>& classroom, int numberWorkingDays, vector<string>& classes, vector<int>& duration)
+GeneticAlgorithm::GeneticAlgorithm(vector<string>& classroom, int numberWorkingDays, vector<string>& classes, vector<int>& duration, int popularizationSize, int generation, double mutationRate, int elitsm, int CUTOFF)
 {
 	this->classroom = classroom;
 	this->numberWorkingDays = numberWorkingDays;
 	this->classes = classes;
 	this->duration = duration;
-	this->popularizationSize = 1000;
+	this->popularizationSize = popularizationSize;
+	this->generation = generation;
+	this->mutationRate = mutationRate;
 	this->elitism = elitism;
-	this->generation = 4;
-	this->mutationRate = 0.2;
-	this->elitism = 4;
-	this->CUTOFF = 32;
+	this->CUTOFF = CUTOFF;
 }
 void GeneticAlgorithm::optimization(vector<vector<string>>& bestInduvidual, vector<vector<int>>& bestStartsClass) {
 	int bestRate = -1000;
@@ -38,7 +37,7 @@ void GeneticAlgorithm::optimization(vector<vector<string>>& bestInduvidual, vect
 	children = parallel_createPopulation(population, startsClassAll, numberWorkingDays * classroom.size());
 	population = children.first;
 	startsClassAll = children.second;
-	rate2(population, startsClassAll, rates);
+	rate(population, startsClassAll, rates);
 	vector<vector<vector<string>>> elitsmPopularity;
 	for (int i = 0; i < elitism; i++) {
 		elitsmPopularity.push_back(population[i]);
@@ -54,7 +53,7 @@ void GeneticAlgorithm::optimization(vector<vector<string>>& bestInduvidual, vect
 		for (int j = 0; j < elitism; j++) {
 			elitsmPopularity.push_back(population[i]);
 		}
-		rate2(population, startsClassAll, rates);
+		rate(population, startsClassAll, rates);
 		if (rates[0] > bestRate) {
 			bestRate = rates[0];
 			bestInduvidual = population[0];
@@ -63,7 +62,8 @@ void GeneticAlgorithm::optimization(vector<vector<string>>& bestInduvidual, vect
 	}
 }
 
-std::pair<std::vector<std::vector<std::vector<std::string>>>, std::vector<std::vector<std::vector<int>>>> GeneticAlgorithm::parallel_createPopulation(std::vector<std::vector<std::vector<std::string>>>population, std::vector<std::vector<std::vector<int>>>startsClassAll, int parentsSize) {
+std::pair<std::vector<std::vector<std::vector<std::string>>>, std::vector<std::vector<std::vector<int>>>> GeneticAlgorithm::parallel_createPopulation
+(std::vector<std::vector<std::vector<std::string>>>population, std::vector<std::vector<std::vector<int>>>startsClassAll, int parentsSize) {
 	task_group g;
 	std::pair<std::vector<std::vector<std::vector<std::string>>>, std::vector<std::vector<std::vector<int>>>> children;
 	std::pair<std::vector<std::vector<std::vector<std::string>>>, std::vector<std::vector<std::vector<int>>>> children1;
@@ -86,7 +86,6 @@ std::pair<std::vector<std::vector<std::vector<std::string>>>, std::vector<std::v
 
 		g.wait();
 	}
-	cout << children1.first.size();
 	children.first.insert(children.first.end(), children1.first.begin(), children1.first.end());
 	children.second.insert(children.second.end(), children1.second.begin(), children1.second.end());
 	children.first.insert(children.first.end(), children2.first.begin(), children2.first.end());
@@ -99,7 +98,8 @@ std::pair<std::vector<std::vector<std::vector<std::string>>>, std::vector<std::v
 	return children;
 }
 
-std::pair<std::vector<std::vector<std::vector<std::string>>>, std::vector<std::vector<std::vector<int>>>> GeneticAlgorithm::createPopulation(std::vector<std::vector<std::vector<std::string>>>population, std::vector<std::vector<std::vector<int>>>startsClassAll, int size) {
+std::pair<std::vector<std::vector<std::vector<std::string>>>, std::vector<std::vector<std::vector<int>>>> GeneticAlgorithm::createPopulation
+(std::vector<std::vector<std::vector<std::string>>>population, std::vector<std::vector<std::vector<int>>>startsClassAll, int size) {
 	for (int i = 0; i < size; i++) {
 		vector < vector<string>> vec;
 		vector < vector<int>> vec1;
@@ -129,36 +129,7 @@ std::pair<std::vector<std::vector<std::vector<std::string>>>, std::vector<std::v
 }
 
 
-void GeneticAlgorithm::rate1(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startClassAll, vector<int>& rates) {
-	for (int i = 0; i < population.size() - 1; i++) {
-		int sum = 0;
-		vector<vector<string>> table = population[i];
-		vector<vector<int>> time = startClassAll[i];
-		for (int j = 0; j < time[i].size(); j++) {
-			int multyply = 0;
-			vector<string> a = table[j];
-			if (a.size() == 0) {
-				multyply = 720 * 720;
-			}
-			else {
-				multyply = time[i][j] * (720 - time[i][j]);
-			}
-			sum = sum + multyply;
-		}
-		rates.push_back(sum);
-	}
-	for (int i = 0; i < rates.size() - 1; i++) {
-		for (int j = i + 1; j < rates.size(); j++) {
-			if (rates[j] > rates[i]) {
-				population[i], population[j] = population[j], population[i];
-				rates[i], rates[j] = rates[j], rates[i];
-				startClassAll[i], startClassAll[j] = startClassAll[j], startClassAll[i];
-			}
-		}
-	}
-}
-
-void GeneticAlgorithm::rate2(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startClassAll, vector<int>& rates) {
+void GeneticAlgorithm::rate(std::vector<std::vector<std::vector<std::string>>>& population, std::vector<std::vector<std::vector<int>>>& startClassAll, vector<int>& rates) {
 	int min1 = minimumNumber(population.size(), 10000, startClassAll.size());
 	for (int i = 0; i < min1 - 1; i++) {
 		int sum = 0;
@@ -168,17 +139,8 @@ void GeneticAlgorithm::rate2(std::vector<std::vector<std::vector<std::string>>>&
 		for (int j = 0; j < min2 - 1; j++) {
 			int multyply;
 			vector<string> a = table[j];
-			if (a.size() == 0) {
+			if (a.size() >= 0) {
 				multyply = 720 * 720;
-			}
-			else {
-				multyply = 720 * 720;
-				/*if(time[i].size()<j-1) {
-					multyply = time[i][j] * (720 - time[i][j]);
-				}
-				else{
-					multyply = 720 * 720;
-				}*/
 			}
 			sum = sum + multyply;
 		}
