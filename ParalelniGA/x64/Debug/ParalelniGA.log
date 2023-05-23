@@ -1,3 +1,15 @@
-﻿  main.cpp
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\ParalelniGA\main.cpp(109,108): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  ParalelniGA.vcxproj -> C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\x64\Debug\ParalelniGA.exe
+﻿  GeneticAlgorithm.cpp
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(37,103): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(109,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(133,73): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(138,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(149,79): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(153,17): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(154,12): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(155,20): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(188,30): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\GeneticAlgorithm.cpp(205,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  main.cpp
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\ParalelniGA\main.cpp(109,108): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  ParalelniGA.vcxproj -> C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\x64\Debug\ParalelniGA.exe

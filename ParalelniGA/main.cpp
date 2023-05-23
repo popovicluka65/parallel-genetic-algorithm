@@ -108,6 +108,14 @@ int main()
     loadDataClassDuration(classes, duration);
     GeneticAlgorithm geneticAlgorithm(classroom, workingDays.size(), classes, duration, 1000, 5, 0.2, 4, 32);
     geneticAlgorithm.optimization(bestInduvidual, bestStartsClass);
+    /*GeneticAlgorithm geneticAlgorithm1(classroom, workingDays.size(), classes, duration, 300, 3, 0.2, 10,50);
+    geneticAlgorithm1.optimization(bestInduvidual, bestStartsClass);
+    GeneticAlgorithm geneticAlgorithm2(classroom, workingDays.size(), classes, duration, 500, 2, 0.2, 8,30);
+    geneticAlgorithm2.optimization(bestInduvidual, bestStartsClass);
+    GeneticAlgorithm geneticAlgorithm3(classroom, workingDays.size(), classes, duration, 400, 6, 0.2, 5,100);
+    geneticAlgorithm3.optimization(bestInduvidual, bestStartsClass);
+    GeneticAlgorithm geneticAlgorithm4(classroom, workingDays.size(), classes, duration, 1200, 4, 0.2, 10,36);
+    geneticAlgorithm4.optimization(bestInduvidual, bestStartsClass);*/
     printSchedule(bestInduvidual, bestStartsClass, classroom, classes);
     tick_count endTime = tick_count::now();
     cout << "Parallel time: \t\t\t" << (endTime - startTime).seconds() << " seconds\n";

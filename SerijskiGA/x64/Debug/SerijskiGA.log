@@ -1,17 +1,3 @@
-﻿  GeneticAlgorithm.cpp
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(101,17): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(102,12): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(103,20): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(110,80): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(128,79): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(132,17): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(133,12): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(134,20): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(162,64): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(165,30): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\SerijskiGA\GeneticAlgorithm.cpp(182,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  SerijskiGA.vcxproj -> C:\Users\NITRO\Desktop\gitPP\Paralalno-Programiranje-Projekat\x64\Debug\SerijskiGA.exe
+﻿  main.cpp
+C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\SerijskiGA\main.cpp(109,104): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  SerijskiGA.vcxproj -> C:\Users\NITRO\Desktop\gitPPFinish\Paralalno-Programiranje-Projekat\x64\Debug\SerijskiGA.exe
