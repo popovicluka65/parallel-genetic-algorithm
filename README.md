@@ -8,4 +8,6 @@ The project accelerates the genetic algorithm using the Threading Building Block
 ## Installation
 
 **Clone the Repository**:
-    git clone git@github.com:popovicluka65/SokProject.git
+    ```
+    git@github.com:popovicluka65/Paralelno-Programiranje-Projekat.git
+    ```
