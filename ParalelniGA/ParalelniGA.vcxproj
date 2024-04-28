@@ -24,6 +24,7 @@
     <ProjectGuid>{cc6aecaa-8dbc-41ac-b445-1127eed3144c}</ProjectGuid>
     <RootNamespace>ParalelniGA</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ParallelGA</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

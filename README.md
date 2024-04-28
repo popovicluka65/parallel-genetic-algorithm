@@ -9,5 +9,5 @@ The project accelerates the genetic algorithm using the Threading Building Block
 
 **Clone the Repository**:
     ```
-    git@github.com:popovicluka65/Paralelno-Programiranje-Projekat.git
+    git@github.com:popovicluka65/parallel-genetic-algorithm.git
     ```

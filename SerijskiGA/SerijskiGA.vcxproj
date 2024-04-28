@@ -24,6 +24,7 @@
     <ProjectGuid>{f213a8c9-95eb-46ac-92c8-e6a4a9acf6c8}</ProjectGuid>
     <RootNamespace>SerijskiGA</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SerialGA</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

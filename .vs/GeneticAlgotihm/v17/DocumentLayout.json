@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\NITRO\\Desktop\\prepravka_kodova\\parallel-genetic-algorithm\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC6AECAA-8DBC-41AC-B445-1127EED3144C}|ParalelniGA\\ParalelniGA.vcxproj|C:\\Users\\NITRO\\Desktop\\prepravka_kodova\\parallel-genetic-algorithm\\ParalelniGA\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CC6AECAA-8DBC-41AC-B445-1127EED3144C}|ParalelniGA\\ParalelniGA.vcxproj|solutionrelative:ParalelniGA\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F213A8C9-95EB-46AC-92C8-E6A4A9ACF6C8}|SerijskiGA\\SerijskiGA.vcxproj|C:\\Users\\NITRO\\Desktop\\prepravka_kodova\\parallel-genetic-algorithm\\SerijskiGA\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F213A8C9-95EB-46AC-92C8-E6A4A9ACF6C8}|SerijskiGA\\SerijskiGA.vcxproj|solutionrelative:SerijskiGA\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 182,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\NITRO\\Desktop\\prepravka_kodova\\parallel-genetic-algorithm\\SerijskiGA\\main.cpp",
+              "RelativeDocumentMoniker": "SerijskiGA\\main.cpp",
+              "ToolTip": "C:\\Users\\NITRO\\Desktop\\prepravka_kodova\\parallel-genetic-algorithm\\SerijskiGA\\main.cpp",
+              "RelativeToolTip": "SerijskiGA\\main.cpp",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAAAHgAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-28T17:51:59.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\NITRO\\Desktop\\prepravka_kodova\\parallel-genetic-algorithm\\ParalelniGA\\main.cpp",
+              "RelativeDocumentMoniker": "ParalelniGA\\main.cpp",
+              "ToolTip": "C:\\Users\\NITRO\\Desktop\\prepravka_kodova\\parallel-genetic-algorithm\\ParalelniGA\\main.cpp",
+              "RelativeToolTip": "ParalelniGA\\main.cpp",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAAAHYAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-28T17:50:45.877Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

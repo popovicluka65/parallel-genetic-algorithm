@@ -24,5 +24,4 @@ public:
 	void rate2(std::vector<std::vector<std::vector<string>>>& population, vector<vector<vector<int>>>& startClassAll, vector<int>& rates);
 	void rulleteSelection(std::vector<std::vector<std::vector<std::string>>>& population, vector<vector<vector<int>>>& startClassAll, vector<int>& rates, vector<vector<vector<string>>>& selection);
 	void mutation(vector<vector<vector<string>>>& population);
-	int minimumNumber(int a, int b, int c);
 };
